@@ -1,27 +1,24 @@
 import React from 'react'
 import './App.css';
-// import multiple components.
-// import {Video,Thumb} from './components/Video';
 
 import Video from './components/Video';
-
+import Videos from './data/data';
 const App = () => {
-  const channel = "SUNNY KUMAR";
-  let obj = {
-    title: "ReactJs Tutorial",
-    views: "100k",
-    time: "1 year ago",
-    channel: "channel",
-  }
+
 
   return (
     <div className='App'>
       <div>Videos</div>
+      {
+        Videos.map(video => <Video
+          key={video.id}
+          verified={video.verified}
+          title={video.title}
+          views={video.views}
+          time={video.time}
+          id={video.id}
+        ></Video>)}
 
-      <Video {...obj} ></Video>
-      <Video title="NodeJs Tutorial" views="10k" time="1 month ago" channel={channel} ></Video>
-
-      <Video title="MongoDB Tutorial" views="132k" time="4 month ago" ></Video>
     </div>
   )
 }
