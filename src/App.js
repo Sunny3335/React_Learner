@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css';
 
 import Video from './components/Video';
-import Videos from './data/data';
+import VideoDB from './data/data';
 import PlayButton from './components/PlayButton';
+import Counter from './components/Counter';
 const App = () => {
+  console.log('render App');
+  const [Videos, setVideos] = useState(VideoDB);
 
 
   return (
-    <div className='App' onClick={()=>console.log('App')}>
-      <div>Videos</div>
+    <div className='App' onClick={() => console.log('App')}>
+      <div>
+        <button onClick={() => {
+          setVideos([...Videos, {
+            id: 3,
+            channel: "SUNNY KUMAR",
+            title: "MongoDB Tutorial",
+            views: "500k",
+            time: "1 month ago",
+            verified: true,
+          }]);
+        }}>Add video</button>
+      </div>
       {
         Videos.map(video => <Video
           key={video.id}
@@ -38,6 +52,8 @@ const App = () => {
         {/*<PlayButton message="End" onSmash={() => alert("Stop game")} >Pause</PlayButton>*/}
 
       </div>
+
+      <Counter></Counter>
 
 
     </div>

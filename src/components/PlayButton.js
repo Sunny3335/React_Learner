@@ -1,22 +1,20 @@
 import React from 'react'
 import './PlayButton.css';
+import { useState } from 'react';
 
-// event generally like mouse event or keyboard event.
 const PlayButton = ({ message, children, onPlay, onPause, }) => {
-    let playing = false; // dont you this approach.
-    // event bubling to stop the calling of main function any onClick.
+    const [playing, setPlaying] = useState(false);
 
     function handleClick(e) {
-        // console.log(e)
         e.stopPropagation(); // to control
         if (playing) onPlay();
         else onPause();
 
-        playing = !playing;
+        setPlaying(!playing);
     }
 
     return (
-        <button onClick={handleClick}>{children} : {playing ? '>' : '||'}</button>
+        <button onClick={handleClick}>{children} : {playing ? '▶️' : '⏸️'}</button>
     )
 }
 
