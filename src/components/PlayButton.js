@@ -5,6 +5,8 @@ import { useState } from 'react';
 const PlayButton = ({ message, children, onPlay, onPause, }) => {
     const [playing, setPlaying] = useState(false);
 
+    // here playing is state and setPlaying is setter, we always use the setPlaying to  update it.
+
     function handleClick(e) {
         e.stopPropagation(); // to control
         if (playing) onPlay();

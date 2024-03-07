@@ -15,7 +15,7 @@ const App = () => {
       <div>
         <button onClick={() => {
           setVideos([...Videos, {
-            id: 3,
+            id: Video.length + 5,
             channel: "SUNNY KUMAR",
             title: "MongoDB Tutorial",
             views: "500k",
