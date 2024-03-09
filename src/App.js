@@ -4,7 +4,8 @@ import './App.css';
 import Video from './components/Video';
 import VideoDB from './data/data';
 import PlayButton from './components/PlayButton';
-import Counter from './components/Counter';
+import AddVideo from './components/AddVideo';
+
 const App = () => {
   console.log('render App');
   const [Videos, setVideos] = useState(VideoDB);
@@ -12,18 +13,7 @@ const App = () => {
 
   return (
     <div className='App' onClick={() => console.log('App')}>
-      <div>
-        <button onClick={() => {
-          setVideos([...Videos, {
-            id: Video.length + 5,
-            channel: "SUNNY KUMAR",
-            title: "MongoDB Tutorial",
-            views: "500k",
-            time: "1 month ago",
-            verified: true,
-          }]);
-        }}>Add video</button>
-      </div>
+      <AddVideo AddVideos={setVideos}></AddVideo>
       {
         Videos.map(video => <Video
           key={video.id}
@@ -46,15 +36,7 @@ const App = () => {
 
       <div style={{ clear: 'both' }}>
 
-        {/* <PlayButton message="Start" onPlay={() => console.log("Play game")} onPause={() => console.log("Pause game")}>Pause</PlayButton>
- */}
-
-        {/*<PlayButton message="End" onSmash={() => alert("Stop game")} >Pause</PlayButton>*/}
-
       </div>
-
-      <Counter></Counter>
-
 
     </div>
   )
