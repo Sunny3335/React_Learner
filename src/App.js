@@ -12,12 +12,13 @@ const App = () => {
     views: "100k",
     time: "1 year ago",
     channel: "channel",
-  }
+  };
 
   return (
     <div className='App'>
       <div>Videos</div>
-
+      
+      {/* spread operator */}
       <Video {...obj} ></Video>
       <Video title="NodeJs Tutorial" views="10k" time="1 month ago" channel={channel} ></Video>
 

@@ -3,7 +3,7 @@ import './Video.css';
 
 // you can use it as destructuring value in place of props but in the curley braces.
 
-const Video = ({ title, channel="SUNNY", views, time }) => {
+const Video = ({ title, channel = "SUNNY", views, time }) => {
     // let topic = "ReactJs Tutorial - ";
     // console.log(props);
 
