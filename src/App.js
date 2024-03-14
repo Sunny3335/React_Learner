@@ -5,12 +5,13 @@ import Video from './components/Video';
 import Videos from './data/data';
 const App = () => {
 
+  /* here we put {} to write the js code */
 
   return (
     <div className='App'>
       <div>Videos</div>
-      {
-        Videos.map(video => <Video
+      {Videos.map(video =>
+        <Video
           key={video.id}
           verified={video.verified}
           title={video.title}
