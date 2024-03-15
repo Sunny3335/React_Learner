@@ -8,7 +8,7 @@ const PlayButton = ({ message, children, onPlay, onPause, }) => {
 
     function handleClick(e) {
         // console.log(e)
-        e.stopPropagation(); // to control
+        e.stopPropagation(); // to control continuous rendring.
         if (playing) onPlay();
         else onPause();
 

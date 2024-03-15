@@ -8,7 +8,7 @@ const App = () => {
 
 
   return (
-    <div className='App' onClick={()=>console.log('App')}>
+    <div className='App' onClick={() => console.log('App')}>
       <div>Videos</div>
       {
         Videos.map(video => <Video
@@ -20,13 +20,7 @@ const App = () => {
           id={video.id}
 
         >
-          <PlayButton
-            onPlay={() => console.log("Playing", video.title)}
-            onPause={() => console.log("Pause game", video.title)}
-          >
-            {video.title}
-
-          </PlayButton>
+          <PlayButton onPlay={() => console.log("Playing", video.title)} onPause={() => console.log("Pause game", video.title)}> {video.title}</PlayButton>
 
         </Video>)}
 
@@ -38,10 +32,12 @@ const App = () => {
         {/*<PlayButton message="End" onSmash={() => alert("Stop game")} >Pause</PlayButton>*/}
 
       </div>
-
-
     </div>
   )
 }
 
 export default App;
+// onclick works on regular html element. it does not recognize the onlcink when we use on component.
+// then we pass it fromm the main file to childeren function can be passed as a props.
+
+// that is called custom events.
