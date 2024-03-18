@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css';
-
 import Video from './components/Video';
 import Videos from './data/data';
 const App = () => {
@@ -17,9 +16,8 @@ const App = () => {
                     title={video.title}
                     views={video.views}
                     time={video.time}
-                    id={video.id}
-                ></Video>)}
-
+                    id={video.id}>
+            </Video>)}
         </div>
     )
 }
