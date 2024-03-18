@@ -25,12 +25,6 @@ const Video = ({ title, channel = "SUNNY", views, time }) => {
     )
 }
 
-// const Thumb = () => {
-//   return (
-//     <div>ThumbNail</div>
-//   )
-// }
-
 // export multiple component.
 // if you make more than one component in the one file export them as object shorthand and import them as also in the object destructured way.
 // but this us not the good way you should make the different component in the different file and export and import them differently.
