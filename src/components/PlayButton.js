@@ -1,8 +1,8 @@
-import React from 'react'
-import './PlayButton.css';
+import React from "react";
+import "./PlayButton.css";
 
 // event generally like mouse event or keyboard event.
-const PlayButton = ({ message, children, onPlay, onPause, }) => {
+const PlayButton = ({ message, children, onPlay, onPause }) => {
     let playing = false; // dont you this approach.
     // event bubling to stop the calling of main function any onClick.
 
@@ -16,8 +16,10 @@ const PlayButton = ({ message, children, onPlay, onPause, }) => {
     }
 
     return (
-        <button onClick={handleClick}>{children} : {playing ? '>' : '||'}</button>
-    )
-}
+        <button onClick={handleClick}>
+            {children} : {playing ? ">" : "||"}
+        </button>
+    );
+};
 
 export default PlayButton;
