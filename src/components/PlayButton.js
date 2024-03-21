@@ -9,6 +9,7 @@ const PlayButton = ({ message, children, onPlay, onPause }) => {
     function handleClick(e) {
         // console.log(e)
         e.stopPropagation(); // to control continuous rendring.
+        // e.preventDefault(); // used to prevent any default behaviour like submit the form button
         if (playing) onPlay();
         else onPause();
 
